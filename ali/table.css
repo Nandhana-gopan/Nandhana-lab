@@ -1,0 +1,12 @@
+.table-roll{
+    border: solid .1px black;
+
+    
+}
+.table-roll td{
+        border: solid .1px black;
+}
+.table-roll th{
+    border: solid .1px black;
+    
+}
