@@ -13,7 +13,7 @@ struct Node* createNode(int data) {
     return newnode;
 }
 
-void traverse(struct Node* head) {
+void traverse(struct Node * head) {
     struct Node* temp = head;
     printf("list is: ");
     while(temp != NULL) {
@@ -29,12 +29,12 @@ void insertatbeginning(struct Node** head, int data) {
     *head = newnode;
 }
 
-// ✅ FIXED: changed parameter from Node* to Node**
+
 void insertatpos(struct Node** head, int data,int pos)
 {
     if(pos==1)
     {
-        // ✅ FIXED: pass head as Node** (already is)
+        
         insertatbeginning(head, data);
         return;
     }
@@ -42,7 +42,8 @@ void insertatpos(struct Node** head, int data,int pos)
     struct Node* newnode = createNode(data); 
     struct Node* temp = *head;
 
-    for(int i = 1; temp != NULL && i < pos - 1; i++) {
+    for(int i = 1; temp != NULL && i < pos - 1; i++)
+     {
         temp = temp->next;
     }
 
@@ -105,10 +106,11 @@ void deleteatpos(struct Node** head, int pos)
         return;
     }
 
-    // ✅ FIXED: Removed second definition of temp
+    
     struct Node* temp = *head;
 
-    for(int i = 1; temp != NULL && i < pos - 1; i++) {
+    for(int i = 1; temp != NULL && i < pos - 1; i++) 
+    {
         temp = temp->next;
     }
 
@@ -119,7 +121,8 @@ void deleteatpos(struct Node** head, int pos)
     free(todelete);
 }
 
-void search(struct Node* head, int key) {
+void search(struct Node* head, int key) 
+{
     int pos = 1;
     struct Node* temp = head;
     while(temp != NULL) {
@@ -133,28 +136,71 @@ void search(struct Node* head, int key) {
     printf("Element %d not found in the list\n", key);
 }
 
-int main() 
+struct Node* merge(struct Node* head1,struct Node* head2)
 {
-    struct Node* head = NULL;
-    insertatend(&head, 10);
-    insertatend(&head, 20);
-    insertatend(&head, 30);
-    insertatend(&head, 50);
-    insertatbeginning(&head,5);
-    insertatpos(&head,15,3);
-    insertatend(&head, 45);
-    insertatbeginning(&head,90);
-    insertatend(&head, 89);
-    insertatpos(&head,13,4);
-    insertatend(&head, 50);
-    insertatpos(&head,5,5);
-    traverse(head);
-    deleteatbeg(&head);
-    deleteatend(&head);
-    deleteatpos(&head,4);
-    traverse(head);
-    search(head, 20);
-    search(head, 100);  // test not found
-    return 0;
+    if(head1==NULL)
+    return head2;
+    if(head2==NULL)
+    return head1;
+    struct Node* temp = head1;
+    while(temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = head2;
+    return head1;
 }
 
+int main() 
+{
+    
+    struct Node* head1 = NULL;
+    struct Node* head2 = NULL;
+    insertatend(&head1, 10);
+    insertatend(&head1, 20);
+    insertatend(&head1, 30);
+    insertatend(&head1, 50);
+    insertatbeginning(&head1,5);
+    insertatpos(&head1,15,3);
+    insertatend(&head1, 45);
+    insertatbeginning(&head1,90);
+    insertatend(&head1, 89);
+    insertatpos(&head1,13,4);
+    insertatend(&head1, 50);
+    insertatpos(&head1,5,5);
+    traverse(head1);
+    deleteatbeg(&head1);
+    deleteatend(&head1);
+    deleteatpos(&head1,4);
+    traverse(head1);
+    search(head1, 20);
+    search(head1, 100);// test not found
+
+
+
+    insertatend(&head2, 190);
+    insertatend(&head2, 200);
+    insertatend(&head2, 300);
+    insertatend(&head2, 500);
+    insertatbeginning(&head2,590);
+    insertatpos(&head2,150,3);
+    insertatend(&head2, 456);
+    insertatbeginning(&head2,900);
+    insertatend(&head2, 890);
+    insertatpos(&head2,13,2);
+    insertatend(&head2, 50);
+    insertatpos(&head2,598,5);
+    traverse(head2);
+    deleteatbeg(&head2);
+    deleteatend(&head2);
+    deleteatpos(&head2,4);
+    traverse(head2);
+    search(head2, 20);
+    search(head2, 150);  
+    
+
+    struct Node* mergehead=merge(head1,head2);
+    printf("\nafter merging:\n");
+    traverse(mergehead);
+    return 0;
+}
