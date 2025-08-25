@@ -58,12 +58,11 @@ struct Node { int data; struct Node *next; };
  {
      struct Node*head=NULL;
      insertatend(&head,10);
-      insertatend(&head,20);
-       insertatend(&head,30);
-        insertatend(&head,50); 
-        traverse(head);
-         deleteatbeg(&head);
-          search(head,20);
-           return 0;
-        
+     insertatend(&head,20);
+     insertatend(&head,30);
+     insertatend(&head,50); 
+     traverse(head);
+     deleteatbeg(&head);
+     search(head,20);
+     return 0;     
 }

@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node {
+struct Node 
+{
     int data;
     struct Node *next;
 };
-
-struct Node* createNode(int data) {
+struct Node* createNode(int data) 
+{
     struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
     newnode->data = data;
     newnode->next = NULL;
     return newnode;
 }
-
-void traverse(struct Node * head) {
+void traverse(struct Node * head)
+{
     struct Node* temp = head;
     printf("list is: ");
     while(temp != NULL) {
@@ -22,14 +23,12 @@ void traverse(struct Node * head) {
     }
     printf("NULL\n");
 }
-
-void insertatbeginning(struct Node** head, int data) {
+void insertatbeginning(struct Node** head, int data)
+{
     struct Node* newnode = createNode(data);
     newnode->next = *head;
     *head = newnode;
 }
-
-
 void insertatpos(struct Node** head, int data,int pos)
 {
     if(pos==1)
@@ -56,8 +55,8 @@ void insertatpos(struct Node** head, int data,int pos)
     newnode->next = temp->next;
     temp->next = newnode;
 }
-
-void insertatend(struct Node** head, int data) {
+void insertatend(struct Node** head, int data) 
+{
     struct Node* newnode = createNode(data);
     if (*head == NULL) {
         *head = newnode;
@@ -69,14 +68,13 @@ void insertatend(struct Node** head, int data) {
     }
     temp->next = newnode;
 }
-
-void deleteatbeg(struct Node** head) {
+void deleteatbeg(struct Node** head) 
+{
     if (*head == NULL) return;
     struct Node* temp = *head;
     *head = (*head)->next;
     free(temp);
 }
-
 void deleteatend(struct Node** head)
 {
     if (*head == NULL) return;
@@ -95,7 +93,6 @@ void deleteatend(struct Node** head)
     free(temp->next);
     temp->next = NULL;
 }
-
 void deleteatpos(struct Node** head, int pos)
 {
     if (*head == NULL) return;
@@ -120,7 +117,6 @@ void deleteatpos(struct Node** head, int pos)
     temp->next = todelete->next;
     free(todelete);
 }
-
 void search(struct Node* head, int key) 
 {
     int pos = 1;
@@ -135,7 +131,6 @@ void search(struct Node* head, int key)
     }
     printf("Element %d not found in the list\n", key);
 }
-
 struct Node* merge(struct Node* head1,struct Node* head2)
 {
     if(head1==NULL)
@@ -152,8 +147,9 @@ struct Node* merge(struct Node* head1,struct Node* head2)
 }
 
 int main() 
+
 {
-    
+
     struct Node* head1 = NULL;
     struct Node* head2 = NULL;
     insertatend(&head1, 10);
@@ -204,3 +200,4 @@ int main()
     traverse(mergehead);
     return 0;
 }
+
