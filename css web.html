@@ -1,0 +1,100 @@
+<html>
+<head>
+    <style>
+    h1
+    {
+    color: black;
+    background-color: yellow;
+    font-size:xx-large;
+    text-align: center;
+    }
+    #abc{
+        color:blueviolet
+    }
+    
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<h1><marquee behaviour="scroll" scrollamount="15" onmouseover="this.stop()" onmouseout="this.start()">welcome to the world of css</marquee></h1>
+<hr>
+<hr>
+<body>
+    <br>
+    <center><img src="image9.jpg" width="600px" height="400px" id="abc"></center>
+    <br>
+<p>CSS (Cascading Style Sheets) is a language used to describe the presentation of a web page written in HTML or XML. It controls the layout, colors, fonts, spacing, and overall visual appearance of a website, allowing developers to separate content from design. By using CSS, designers can apply consistent styles across multiple web pages and make global changes easily. CSS also supports responsive design, enabling websites to adapt to different screen sizes and devices. With features like selectors, properties, and media queries, CSS plays a vital role in modern web development by enhancing user experience and visual appeal.</p>
+</body>
+<h1><center>PROPERTIES OF CSS</center></h1>
+<iframe src="proper.html" width="650px" height="25%"></iframe>
+<iframe src="" name="abc" width="650px" height="25%"></iframe>
+<br><br>
+<h1>KEY ASPECTS OF CSS</h1>
+<p style="font-size:larger">
+Key aspects of CSS include:
+<ul>
+<li>styling and Layout:
+CSS controls the visual appearance and layout of web page elements. This includes properties like fonts, colors, spacing, dimensions, positioning, and responsiveness for different screen sizes.</li>
+<li>
+Separation of Concerns:
+A core principle of CSS is the separation of content (HTML) from presentation (CSS). This makes websites easier to maintain, update, and more flexible for different display media (e.g., screen, print).</li>
+<li>Cascading and Specificity:
+The "Cascading" in CSS refers to the rules that govern how styles are applied when multiple rules might conflict. This involves a system of specificity and inheritance to determine which styles take precedence.</li>
+<li>Syntax:
+CSS rules consist of a selector (targeting HTML elements) and a declaration block. The declaration block contains one or more declarations, each with a property (e.g., color, font-size) and its corresponding value (e.g., blue, 16px).</li>
+</p>
+<br>
+<br>
+<div id="abc">
+EXAMPLE OF CSS SYNTAX:
+<br>
+<br>
+h1<br> {
+    <br>
+  color: navy;<br>
+  text-align: center;<br>
+}
+<br>
+<br>
+
+p <br>{<br>
+  font-family: sans-serif;<br>
+  line-height: 1.5;<br>
+}
+</div>
+<h1>HOW TO ADD CSS INTO A FILE</h1>
+<p>There are three ways in which CSS can be used in a page.
+<br>
+<br>
+<b>1. Inline CSS -</b>  Inline CSS involves applying style rules directly to individual HTML elements via the style attribute.
+<br><br>
+When to use it:
+<br>
+<ol>
+<li>Great for quick, one-off styling or testing.</li>
+
+<li>Not recommended for maintaining or scaling a project.</li></ol>
+<br><br>
+Pros: Immediate application, easy to test.
+<br><br>
+Cons: Makes HTML cluttered and repetitive; poor maintainability.
+<br><br><br>
+<b>2. Internal CSS (Embedded CSS)</b>- Internal CSS is placed within a style tag in the head section of an HTML document.
+<br>
+<p>When to use it:
+
+Useful for single-page applications or quick prototypes.</p>
+<br>
+Pros: Keeps all styles in one place within a single document; better than inline for organization.
+<br><br>Cons: Styles are confined to that one page and can become bloated with complexity.
+<br><br><br>
+<p><b>3.External CSS-</b>
+
+External CSS lives in a separate .css file, connected to the HTML via a link tag</p>
+<p>When to use it:
+
+Perfect for websites with multiple pages or large-scale projects.</p>
+<br>
+Pros: Promotes separation of content and style, easier maintenance, reusable across pages.
+<br><br>
+Cons: Slight initial load overhead; risk of a flash of unstyled content (FOUC) if CSS doesn't load swiftly.
+</html>
