@@ -1,1 +1,12 @@
-f
+if (*head == NULL) {
+        *head = newnode;
+        newnode->next = newnode;
+        return;
+    }
+    struct Node* temp = *head;
+    while (temp->next != *head) {
+        temp = temp->next;
+    }
+    newnode->next = *head;
+    temp->next = newnode;
+    *head = newnode;
