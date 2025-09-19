@@ -20,7 +20,7 @@ void enqueue(int value)
     else 
     {
         rear->next =newnode;
-        newnode->next = front; // Circular link to front
+        newnode->next = front; 
         rear = newnode;    }
 
     printf("Enqueued: %d\n", value);
@@ -36,7 +36,7 @@ void dequeue()
     }
 
     int value = front->data;
-    if (front == rear)  // Only one node in queue
+    if (front == rear)  
     {
         free(front);
         front = rear = NULL;
@@ -45,7 +45,7 @@ void dequeue()
     {
         struct node* temp = front;
         front = front->next;
-        rear->next = front; // Maintain circular link
+        rear->next = front; 
         free(temp);
     }
     printf("Dequeued: %d\n", value);
