@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter a number<input id="n1" type="number">
+    <br><br>
+    enter  number2<input id="n2" type="number">
+
+    <br><br>
+    <button id="b1" onclick="square()">square</button>
+    <button id="b2" onclick="power()">power</button>
+    <button id="b3" onclick="round()">round</button>
+    <button id="b3" onclick="ceil()">ceil</button>
+    <button id="b3" onclick="floor()">floor</button>
+    <button id="b3" onclick="abs()">abs</button>
+    <button id="b3" onclick="trunc()">truncate</button>
+
+    <p id="res"></p>
+    <script>
+        function square()
+        {
+            var x=parseFloat(document.getElementById("n1").value);
+            var z=Math.sqrt(x);
+            document.getElementById("res").textContent = "the square root is: " + z;
+        }
+        function power()
+        {
+            var x=parseFloat(document.getElementById("n1").value);
+            var y=parseFloat(document.getElementById("n2").value);
+            var z=Math.pow(x,y);
+            document.getElementById("res").textContent = "the power is: " + z;
+        }
+        function round()
+        {
+          var x=parseFloat(document.getElementById("n1").value);
+            var z=Math.round(x);
+            document.getElementById("res").textContent = "the rounded value is: " + z;  
+        }
+        function ceil()
+        {
+          var x=parseFloat(document.getElementById("n1").value);
+            var z=Math.ceil(x);
+            document.getElementById("res").textContent = "the ceil value is: " + z;  
+        }
+        function floor()
+        {
+          var x=parseFloat(document.getElementById("n1").value);
+            var z=Math.floor(x);
+            document.getElementById("res").textContent = "the rounded value is: " + z;  
+        }
+        function abs()
+        {
+          var x=parseFloat(document.getElementById("n1").value);
+            var z=Math.abs(x);
+            document.getElementById("res").textContent = "the rounded value is: " + z;  
+        }
+        function trunc()
+        {
+            var x=parseFloat(document.getElementById("n1").value);
+            var z=Math.trunc(x);
+            document.getElementById("res").textContent = "the truncated value is: " + z;
+        }
+
+
+
+
+    </script>
+</body>
+</html>
