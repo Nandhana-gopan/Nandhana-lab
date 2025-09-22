@@ -3,15 +3,18 @@
 #define MAX 32  // max elements 0 to 31
 typedef unsigned int BitSet;
 
-void add(BitSet *set, int element) {
+void add(BitSet *set, int element) 
+{
     if (element >= 0 && element < MAX)
         *set |= (1U << element);
 }
 
 // Print set as elements (optional)
-void printSet(BitSet set) {
+void printSet(BitSet set) 
+{
     printf("{ ");
-    for (int i = 0; i < MAX; i++) {
+    for (int i = 0; i < MAX; i++)
+    {
         if (set & (1U << i))
             printf("%d ", i);
     }
@@ -19,15 +22,18 @@ void printSet(BitSet set) {
 }
 
 // Print bit string from MSB (bit 31) to LSB (bit 0)
-void printBitString(BitSet set) {
-    for (int i = MAX - 1; i >= 0; i--) {
+void printBitString(BitSet set) 
+{
+    for (int i = MAX - 1; i >= 0; i--)
+    {
         int bit = (set >> i) & 1;
         printf("%d", bit);
     }
     printf("\n");
 }
 
-void inputSet(BitSet *set, BitSet universalSet, const char *setName) {
+void inputSet(BitSet *set, BitSet universalSet, const char *setName)
+{
     int n, element;
 
     printf("Enter number of elements in %s: ", setName);
@@ -51,7 +57,8 @@ void inputSet(BitSet *set, BitSet universalSet, const char *setName) {
     }
 }
 
-int main() {
+int main()
+{
     BitSet universalSet = 0, subset1 = 0, subset2 = 0;
     int n, element;
 
@@ -76,14 +83,14 @@ int main() {
 
     printf("Universal set bit string: ");
     printBitString(universalSet);
-
+    printSet(universalSet);
     inputSet(&subset1, universalSet, "Subset 1");
     printf("Subset 1 bit string:       ");
     printBitString(subset1);
-
+    printSet(subset1);
     inputSet(&subset2, universalSet, "Subset 2");
     printf("Subset 2 bit string:       ");
     printBitString(subset2);
-
+    printSet(subset2);
     return 0;
 }

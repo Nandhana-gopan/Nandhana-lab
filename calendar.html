@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<label for="year">Year:</label>
+<input id="year" type="number" value="2025" min="1900" max="2100">
+
+<label for="month">Month (1-12):</label>
+<input id="month" type="number" value="9" min="1" max="12">
+
+<button onclick="generateCalendar()">Generate Calendar</button>
+
+<p id="abc"></p>
+
+<script>
+function generateCalendar() {
+    var year = parseInt(document.getElementById("year").value);
+    var month = parseInt(document.getElementById("month").value) - 1; 
+
+    var d = "<table border='1' cellspacing='0' cellpadding='10'><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THURS</th><th>FRI</th><th>SAT</th></tr><tr>";
+    
+    var c = new Date(year, month, 1);
+    var day = c.getDay();
+
+    for (var i = 0; i < day; i++) {
+        d += "<td></td>";
+    }
+
+    while (c.getMonth() === month) {
+        d += "<td>" + c.getDate() + "</td>";
+        if (c.getDay() === 6) {
+            d += "</tr><tr>";
+        }
+        c.setDate(c.getDate() + 1);
+    }
+    d += "</tr></table>";
+
+    document.getElementById("abc").innerHTML = d;
+}
+</script>
