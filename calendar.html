@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Year Calendar</title>
 </head>
 <body>
 <label for="year">Year:</label>
 <input id="year" type="number" value="2025" min="1900" max="2100">
-
-<label for="month">Month (1-12):</label>
-<input id="month" type="number" value="9" min="1" max="12">
-
 <button onclick="generateCalendar()">Generate Calendar</button>
 
 <p id="abc"></p>
@@ -19,26 +15,49 @@
 <script>
 function generateCalendar() {
     var year = parseInt(document.getElementById("year").value);
-    var month = parseInt(document.getElementById("month").value) - 1; 
+    var d = "<h2>Calendar for " + year + "</h2>";
+    var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-    var d = "<table border='1' cellspacing='0' cellpadding='10'><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THURS</th><th>FRI</th><th>SAT</th></tr><tr>";
-    
-    var c = new Date(year, month, 1);
-    var day = c.getDay();
+    d += "<table border='0' cellspacing='20'>"; // outer table to arrange months in 3 rows of 4
 
-    for (var i = 0; i < day; i++) {
-        d += "<td></td>";
-    }
+    for (var row = 0; row < 3; row++) {
+        d += "<tr>";
+        for (var col = 0; col < 4; col++) {
+            var month = row * 4 + col;
+            if (month < 12) {
+                d += "<td valign='top'>";
+                d += "<h3 align='center'>" + monthNames[month] + "</h3>";
+                d += "<table border='1' cellspacing='0' cellpadding='5'>";
+                d += "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>";
 
-    while (c.getMonth() === month) {
-        d += "<td>" + c.getDate() + "</td>";
-        if (c.getDay() === 6) {
-            d += "</tr><tr>";
+                var c = new Date(year, month, 1);
+                var day = c.getDay();
+
+                // Empty cells before first day
+                for (var i = 0; i < day; i++) {
+                    d += "<td></td>";
+                }
+
+                // Dates
+                while (c.getMonth() === month) {
+                    d += "<td>" + c.getDate() + "</td>";
+                    if (c.getDay() === 6) {
+                        d += "</tr><tr>";
+                    }
+                    c.setDate(c.getDate() + 1);
+                }
+
+                d += "</tr></table></td>";
+            }
         }
-        c.setDate(c.getDate() + 1);
+        d += "</tr>";
     }
-    d += "</tr></table>";
+
+    d += "</table>";
 
     document.getElementById("abc").innerHTML = d;
 }
 </script>
+
+</body>
+</html>
