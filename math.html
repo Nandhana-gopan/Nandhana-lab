@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
 </head>
+<div>
 <body>
+  <h1><center>MATH FUNCTION</center></h1>
+  <center><div>
     enter a number<input id="n1" type="number">
     <br><br>
     enter  number2<input id="n2" type="number">
@@ -18,6 +21,10 @@
     <button id="b3" onclick="floor()">floor</button>
     <button id="b3" onclick="abs()">abs</button>
     <button id="b3" onclick="trunc()">truncate</button>
+    <button id="b3" onclick="cube()">cube root</button>
+    <button id="b3" onclick="expo()">exponent</button>
+
+
 
     <p id="res"></p>
     <script>
@@ -50,13 +57,13 @@
         {
           var x=parseFloat(document.getElementById("n1").value);
             var z=Math.floor(x);
-            document.getElementById("res").textContent = "the rounded value is: " + z;  
+            document.getElementById("res").textContent = "the floor value is: " + z;  
         }
         function abs()
         {
           var x=parseFloat(document.getElementById("n1").value);
             var z=Math.abs(x);
-            document.getElementById("res").textContent = "the rounded value is: " + z;  
+            document.getElementById("res").textContent = "the absolute value is: " + z;  
         }
         function trunc()
         {
@@ -64,10 +71,125 @@
             var z=Math.trunc(x);
             document.getElementById("res").textContent = "the truncated value is: " + z;
         }
-
-
-
+        function cube()
+        {
+            var x=parseFloat(document.getElementById("n1").value);
+            var z=Math.cbrt(x);
+            document.getElementById("res").textContent = "the cube root is: " + z;
+        }
+        function expo()
+        {
+            var x=parseFloat(document.getElementById("n1").value);
+            var z=Math.exp(x);
+            document.getElementById("res").textContent = "the e value is: " + z;
+        }
 
     </script>
+    </div>
+</center>
+
+</body>
+</div>
+<div>
+  
+<!DOCTYPE html>
+<html>
+<head>
+<title>STRING FUNCTION</title>
+</head>
+<body>
+  <h1><center>STRING FUNCTIONS</center></h1>
+  <center>
+    <div>
+      Enter the string: <input id="s1" type="text">
+      <br><br>
+      Enter string2 / replace word: <input id="s2" type="text">
+      <br><br>
+      Enter replace-with / index / separator: <input id="s3" type="text">
+      <br><br>
+
+      <button onclick="upper()">Upper</button>
+      <button onclick="lower()">Lower</button>
+      <button onclick="concat()">Concat</button>
+      <button onclick="length()">Length</button>
+      <button onclick="index()">Char at Index</button>
+      <button onclick="replaceText()">Replace</button>
+      <button onclick="substringText()">Substring</button>
+      <button onclick="includesText()">Includes?</button>
+      <button onclick="trimText()">Trim</button>
+      <button onclick="splitText()">Split</button>
+
+      <p id="res2"></p>
+    </div>
+  </center>
+
+  <script>
+    function upper() {
+      var x = document.getElementById("s1").value;
+      document.getElementById("res2").textContent = x.toUpperCase();
+    }
+
+    function lower() {
+      var x = document.getElementById("s1").value;
+      document.getElementById("res2").textContent = x.toLowerCase();
+    }
+
+    function concat() {
+      var x = document.getElementById("s1").value;
+      var y = document.getElementById("s2").value;
+      var z = x.concat(" ", y);
+      document.getElementById("res2").textContent = "Concatenated: " + z;
+    }
+
+    function length() {
+      var x = document.getElementById("s1").value;
+      document.getElementById("res2").textContent = "Length: " + x.length;
+    }
+
+    function index() {
+      var x = document.getElementById("s1").value;
+      var y = parseInt(document.getElementById("s3").value);
+      document.getElementById("res2").textContent = "Character at index " + y + ": " + x.charAt(y);
+    }
+
+    // New string functions below 👇
+
+    function replaceText() {
+      var x = document.getElementById("s1").value;
+      var find = document.getElementById("s2").value;
+      var replaceWith = document.getElementById("s3").value;
+      var z = x.replace(find, replaceWith);
+      document.getElementById("res2").textContent = "After replace: " + z;
+    }
+
+    function substringText() {
+      var x = document.getElementById("s1").value;
+      var start = parseInt(document.getElementById("s2").value);
+      var end = parseInt(document.getElementById("s3").value);
+      var z = x.substring(start, end);
+      document.getElementById("res2").textContent = "Substring: " + z;
+    }
+
+    function includesText() {
+      var x = document.getElementById("s1").value;
+      var y = document.getElementById("s2").value;
+      var result = x.includes(y);
+      document.getElementById("res2").textContent = "Includes '" + y + "': " + result;
+    }
+
+    function trimText() {
+      var x = document.getElementById("s1").value;
+      var z = x.trim();
+      document.getElementById("res2").textContent = "Trimmed text: '" + z + "'";
+    }
+
+    function splitText()
+     {
+      var x = document.getElementById("s1").value;
+      var separator = document.getElementById("s3").value;
+      var parts = x.split(separator);
+      document.getElementById("res2").textContent = "Split parts: " + parts.join(", ");
+    }
+  </script>
 </body>
 </html>
