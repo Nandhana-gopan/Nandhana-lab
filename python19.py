@@ -6,7 +6,5 @@ def fib(n):
 def generate_fib(n):
     for i in range(n):
         print(fib(i))    
-#generate_fib(10)
 n=int(input("enter n"))
 d=generate_fib(n)
-#1print(d)
