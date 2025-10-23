@@ -15,6 +15,7 @@ struct Node* createNode(int value)
     return newNode;
 }
 
+
 struct Node* insert(struct Node* root, int value) 
 {
     if (root == NULL)
@@ -29,6 +30,7 @@ struct Node* insert(struct Node* root, int value)
 
     return root;
 }
+
 
 void inorder(struct Node* root)
 {
