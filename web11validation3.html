@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>job registration</title>
+    <H1> <marquee behaviour="scroll" scrollamount="15"  onmouseover="this.stop()" onmouseout="this.start()"> WELCOME TO FRESHERS WORLD </marquee></H1> 
+    <style>
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 8px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body style="background-color:aqua">  
+    <form id="regForm">
+        <table border="2">
+            <tr>
+                <td colspan="2"><h2 style="text-align:center">REGISTRATION FORM</h2></td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>
+                    <input type="text" name="name" id="name">
+                    <br><span id="nameError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>age</td>
+                <td>
+                    <input type="text" id="age">
+                    <br><span id="ageError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>PASSWORD</td>
+                <td>
+                    <input type="password" id="password" required>
+                    <br><span id="passwordError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>RE-ENTER PASSWORD</td>
+                <td><input type="password" id="repassword" required></td>
+            </tr>
+            <tr>
+                <td>SELECT YOUR SECURITY QUESTION</td>
+                <td>
+                    <input type="radio" name="abc">what is your pet name?<br>
+                    <input type="radio" name="abc">who is your best friend?<br>
+                    <input type="radio" name="abc">what is your faviorate color?<br>
+                    <input type="radio" name="abc">who is your faviorate teacher?<br>
+                </td>
+            </tr>
+            <tr>
+                <td>ANSWER OF YOUR SECURITY QUESTION</td>    
+                <td><input type="text" name="answer" required></td>
+            </tr>
+            <tr>
+                <td>E-mail</td>    
+                <td>
+                    <input type="email" name="email" id="email" required>
+                    <br><span id="emailError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>languages known</td>    
+                <td>
+                    <input type="checkbox" name="abc" value="malayalam" required>malayalam
+                    <input type="checkbox" name="abc" value="hindi" required>hindi
+                    <input type="checkbox" name="abc" value="english" required>english
+                </td>
+            </tr>
+            <tr>
+                <td>phone</td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <td>home<input type="text"></td>
+                            <td>office<input type="text"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>UPLOAD YOUR CV</td>
+                <td><input type="file" name="cv"></td>
+            </tr>
+            <tr class="button">
+                <td><center><input type="reset" value="reset"></center></td>
+                <td><center><input type="submit" value="submit" onclick="validateForm()"></center></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function validateForm() {
+            event.preventDefault(); // prevent actual form submission
+
+            let name = document.getElementById("name").value.trim();
+            let age = document.getElementById("age").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let repassword = document.getElementById("repassword").value;
+
+            let nameError = document.getElementById("nameError");
+            let ageError = document.getElementById("ageError");
+            let emailError = document.getElementById("emailError");
+            let passwordError = document.getElementById("passwordError");
+
+            nameError.textContent = "";
+            ageError.textContent = "";
+            emailError.textContent = "";
+            passwordError.textContent = "";
+
+            let valid = true;
+
+            // Name validation
+            if (name === "") {
+                nameError.textContent = "name cannot be blank";
+                valid = false;
+            }
+
+            // Age validation
+            if (age === "" || isNaN(age)) {
+                ageError.textContent = "age must be a number";
+                valid = false;
+            }
+
+            // Email pattern validation
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = "Enter a valid email address";
+                valid = false;
+            }
+
+            // Password validation (must be exactly 10 characters)
+            if (password.length !== 10) {
+                passwordError.textContent = "Password must contain exactly 10 characters";
+                valid = false;
+            } else if (password !== repassword) {
+                passwordError.textContent = "Passwords do not match";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Form submitted successfully!\nName: " );
+            }
+        }
+    </script>
+</body>
+</html>
