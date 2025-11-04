@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Total Marks</title>
+
+
+    <script>
+        function calculateTotal()
+        {
+            let m1 = parseFloat(document.querySelector('[name="mark1"]').value) || 0;
+            let m2 = parseFloat(document.querySelector('[name="mark2"]').value) || 0;
+            let m3 = parseFloat(document.querySelector('[name="mark3"]').value) || 0;
+            let total = m1 + m2 + m3;
+            document.getElementById("totalResult").textContent = "Total Marks: " + total;
+        }
+
+        function clearTotal()
+        {
+            document.getElementById("totalResult").textContent = "";
+        }
+    </script>
+</head>
+<body style="background-color: lightpink;">
+    <center><h1><b>MARK ENTRY</b></h1></center>
+    <form action="progress.php" method="get" onreset="clearTotal()">
+
+       <center> NAME: <input type="text" name="name"><br><br></center>
+        <center> CLASS: <input type="text" name="class"><br><br></center>
+        <center> ENGLISH MARK: <input type="text" name="mark1"><br><br></center>
+        <center> MATHS MARK: <input type="text" name="mark2"><br><br></center>
+        <center> COMPUTER MARK: <input type="text" name="mark3"><br><br></center>
+
+        <center><button type="button" onclick="calculateTotal()">Calculate Total</button></center><br>
+
+        <center><div id="totalResult" style="font-weight:bold; color:blue;"></div></center>
+
+        <center><input type="submit"></center>
+        <br>
+        <center><input type="reset"></center>
+    </form>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<html>
+<head>
+    <style>
+    h1
+    {
+    color: black;
+    background-color:bisque;
+    font-size:xx-large;
+    text-align: center;
+    }
+
+    #abc
+    
+    {
+        color:blueviolet
+    }
+    .content-container
+     {
+  display: flex;
+  align-items:flex-start;
+  gap: 40px; 
+  margin: 40px 0;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.image-content {
+  flex: 0 0 700px; 
+  align-items: flex-start;
+}
+
+.image-content img {
+  max-width: 600px;
+  height: 400px;
+  display: block;
+}
+
+    
+</style>
+<link rel="stylesheet" href="web6style.css">
+</head>
+<h1>welcome to the world of css</h1>
+<hr>
+<hr>
+<body>
+    <br>
+    <center><img src="image9.jpg" width="600px" height="400px" id="abc"></center>
+    <br>
+<h1>WHAT IS CSS</h1></body>
+<p>CSS, or Cascading Style Sheets, is a fundamental technology used in web development to control the visual appearance and layout of web pages. While HTML (HyperText Markup Language) provides the basic structure and content of a webpage—such as headings, paragraphs, images, and links—CSS is what brings that content to life by defining how it looks to the user. With CSS, developers can apply styles to HTML elements, including colors, fonts, spacing, positioning, and even complex animations, creating a polished and engaging user experience. One of the key strengths of CSS is its ability to separate content from design, allowing developers and designers to make changes to the visual style of an entire website by modifying just a single stylesheet file, rather than editing each HTML page individually. This separation also improves website maintenance, scalability, and consistency. The term “cascading” in CSS refers to the way styles are applied and prioritized—styles can come from multiple sources such as browsers’ default settings, external stylesheets, inline styles, and user preferences—and the browser resolves conflicts by following a specific hierarchy to determine which styles take precedence. CSS supports a broad range of features from basic styling like text color and font size to advanced layout techniques using Flexbox and CSS Grid, enabling responsive designs that adapt seamlessly to different screen sizes and devices. Furthermore, CSS has evolved over the years to include powerful tools for animations, transitions, and interactive effects, all without the need for JavaScript. Overall, CSS is an essential part of modern web design, empowering developers to create visually stunning, accessible, and user-friendly websites that work consistently across all browsers and devices.</p>
+    <h1>WHY USE CSS ?</h1>
+
+<div class="content-container">
+  <div class="text-content">
+    <p style="font-size:larger">Key aspects of CSS include:</p>
+    <ul>
+      <li><b>Styling and Layout:</b> CSS controls the visual appearance and layout of web page elements. This includes properties like fonts, colors, spacing, dimensions, positioning, and responsiveness for different screen sizes.</li>
+      <li><b>Separation of Concerns:</b> A core principle of CSS is the separation of content (HTML) from presentation (CSS). This makes websites easier to maintain, update, and more flexible for different display media (e.g., screen, print).</li>
+      <li><b>Cascading and Specificity:</b> The "Cascading" in CSS refers to the rules that govern how styles are applied when multiple rules might conflict. This involves a system of specificity and inheritance to determine which styles take precedence.</li>
+      <li><b>Syntax:</b> CSS rules consist of a selector (targeting HTML elements) and a declaration block. The declaration block contains one or more declarations, each with a property (e.g., color, font-size) and its corresponding value (e.g., blue, 16px).</li>
+      <li><b>Consistency:</b> CSS ensures uniform design across multiple web pages by using stylesheets applied site-wide.</li>
+      <li><b>Flexibility:</b> CSS makes it easy to change the look and feel of a website without touching the HTML structure.</li>
+      <li><b>Improved load times:</b> External CSS files can be cached by browsers, improving page load speeds.</li>
+      <li><b>Responsive design:</b> CSS enables websites to adapt to different screen sizes and devices (mobile, tablets, desktops).</li>
+    </ul>
+  </div>
+
+  <div class="image-content">
+    <img src="download.jpg" alt="Description of image" />
+  </div>
+</div>
+
+    <h1>HOW TO ADD CSS INTO A FILE</h1>
+
+<div class="content-container">
+  <div class="text-content">
+    <!-- Your existing content here -->
+    <p>There are three ways in which CSS can be used in a page.
+    <br><br>
+    <b>1. Inline CSS -</b>  Inline CSS involves applying style rules directly to individual HTML elements via the style attribute.
+    <br><br>
+    When to use it:
+    <br>
+    <ol>
+      <li>Great for quick, one-off styling or testing.</li>
+      <li>Not recommended for maintaining or scaling a project.</li>
+    </ol>
+    <br><br>
+    Pros: Immediate application, easy to test.
+    <br><br>
+    Cons: Makes HTML cluttered and repetitive; poor maintainability.
+    <br><br><br>
+    <b>2. Internal CSS (Embedded CSS)</b>- Internal CSS is placed within a style tag in the head section of an HTML document.
+    <br>
+    <p>When to use it:
+    Useful for single-page applications or quick prototypes.</p>
+    <br>
+    Pros: Keeps all styles in one place within a single document; better than inline for organization.
+    <br><br>
+    Cons: Styles are confined to that one page and can become bloated with complexity.
+    <br><br><br>
+    <p><b>3.External CSS-</b>
+    External CSS lives in a separate .css file, connected to the HTML via a link tag</p>
+    <p>When to use it:
+    Perfect for websites with multiple pages or large-scale projects.</p>
+    <br>
+    Pros: Promotes separation of content and style, easier maintenance, reusable across pages.
+    <br><br>
+    Cons: Slight initial load overhead; risk of a flash of unstyled content (FOUC) if CSS doesn't load swiftly.
+    <br><br>
+    <div id="abc">
+      EXAMPLE OF CSS SYNTAX:
+      <br><br>
+      h1<br> {
+      <br>
+      color: navy;<br>
+      text-align: center;<br>
+      }
+      <br><br>
+      p <br>{<br>
+      font-family: sans-serif;<br>
+      line-height: 1.5;<br>
+      }
+    </div>
+  </div>
+
+  <div class="image-content">
+    <img src="css.png" alt="Description of image" />
+  </div>
+</div>
+
+<h1>CSS SYNTAX BASICS</h1>
+<div class="content-container">
+  <div class="text-content">
+<ul>
+<li><b>Selectors</b>: Can be element names, classes, IDs, or more complex selectors.</li>
+<br><br>
+<li><b>Properties</b>: Define what aspect of the element to style (color, margin, padding, etc.).</li>
+<br><br>
+<li><b>Values</b>: Specify the exact setting for the property.</li>
+</ul>
+</div>
+<div class="image-content">
+    <img src="types.png" alt="Description of image" />
+  </div>
+</html>
