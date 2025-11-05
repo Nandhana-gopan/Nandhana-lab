@@ -1,24 +1,11 @@
 import csv
 
-data = [
-    ["Name", "Age", "City"],
-    ["Alice", 25, "New York"],
-    ["Bob", 30, "London"],
-    ["Charlie", 28, "Paris"]
-]
+filename = "new.csv"
 
-with open("new.csv", "w", newline="") as file:
-    writer = csv.writer(file)
-    writer.writerows(data)
+columns_to_read = [0, 2]
 
-print("CSV file created successfully!")
-
-specific_lines = [2, 4]
-
-with open("new.csv", "r") as file:
+with open(filename, "r") as file:
     reader = csv.reader(file)
-    line_num = 1  
     for row in reader:
-        if line_num in specific_lines:
-            print(row)
-        line_num += 1
+        selected_columns = [row[i] for i in columns_to_read]
+        print(selected_columns)
