@@ -57,7 +57,7 @@ void printGraph(struct Graph* graph) {
     }
 }
 
-void dfs(struct Graph* graph, int vertex) {
+void depth(struct Graph* graph, int vertex) {
     graph->visited[vertex] = 1;
     printf("%d ", vertex);
 
@@ -65,7 +65,7 @@ void dfs(struct Graph* graph, int vertex) {
     while (temp) {
         int adjVertex = temp->vertex;
         if (graph->visited[adjVertex] == 0) {
-            dfs(graph, adjVertex);
+            depth(graph, adjVertex);
         }
         temp = temp->next;
     }
@@ -94,7 +94,7 @@ int main() {
     scanf("%d", &start);
 
     printf("DFS traversal starting from vertex %d: ", start);
-    dfs(graph, start);
+    depth(graph, start);
     printf("\n");
 
     return 0;
