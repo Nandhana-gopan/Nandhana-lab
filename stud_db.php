@@ -1,15 +1,16 @@
 <?php
 $no = $_GET["rollno"];
+echo "Roll number received: $no<br>";
 $name = $_GET["abc"];
-$gender = $_GET["gender"];
-$mark1 = $_GET["mark1"];
-$mark2 = $_GET["mark2"];
-$total = $mark1 + $mark2;
+$phone = $_GET["number"];
+$address = $_GET["address"];
+$user = $_GET["user"];
+$pass = $_GET["pass"];
 
 $con = mysqli_connect("localhost", "root", "", "student");
 
 if ($con) {
-    $check = "SELECT rollno FROM stud WHERE rollno='$no'";
+    $check = "SELECT rollno FROM studreg WHERE rollno='$no'";
     $result = mysqli_query($con, $check);
     
     if (!$result) {
@@ -17,14 +18,14 @@ if ($con) {
     }
 
     if (mysqli_num_rows($result) > 0) {
-        echo '<script>alert("Roll number already exists"); document.location="web13.php";</script>';
+        echo '<script>alert("Roll number already exists"); document.location="studentreg.php";</script>';
     } else {
-        $s2 = "INSERT INTO stud (rollno, name, gender, mark1, mark2, total)
-               VALUES ('$no', '$name', '$gender', '$mark1', '$mark2', '$total')";
+        $s2 = "INSERT INTO studreg (rollno, name,phone,address,username,password)
+               VALUES ('$no', '$name', '$phone', '$address', '$user', '$pass')";
         $insert = mysqli_query($con, $s2);
 
         if ($insert) {
-            echo '<script>alert("Inserted successfully"); document.location="web13.php";</script>';
+            echo '<script>alert("Inserted successfully"); document.location="stud_db.php";</script>';
         } else {
             echo '<script>alert("Insert failed: ' . mysqli_error($con) . '");</script>';
         }

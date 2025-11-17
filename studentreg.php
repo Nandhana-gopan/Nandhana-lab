@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="database2.php" method="GET">
+    <form action="stud_db.php" method="GET">
     roll no<input type="text" name="rollno"><br><br>
     name<input type="text" name="abc"><br><br>
-    gender:<input type="radio" name="gender" value="female">female
-          <input type="radio" name="gender" value="male">male<br><br>
-    mark1<input type="text" name="mark1"><br><br>
-    mark2<input type="text" name="mark2"><br><br>
+    address:<input type="textarea" name="address"><br><br>
+    phoneno<input type="number" name="number"><br><br>
+    username<input type="text" name="user"><br><br>
+    password<input type="text" name="pass"><br><br>
+    reenter-password:<input type="text" name="repass"><br><br>
     
     <input type="submit">
     <input type="reset">
     </form>
-</body>
-</html>

@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/cacet/Desktop/lab",
-      "program": "c:/Users/cacet/Desktop/lab/build/Debug/outDebug",
+      "cwd": "c:/xampp/htdocs/phplab1",
+      "program": "c:/xampp/htdocs/phplab1/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

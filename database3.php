@@ -4,7 +4,7 @@ if (!$con) {
     die('<script>alert("Database connection failed");</script>');
 }
 
-$check = "SELECT rollno FROM student1";
+$check = "SELECT rollno FROM stud";
 $result = mysqli_query($con, $check);
 ?>
 
@@ -24,7 +24,7 @@ $result = mysqli_query($con, $check);
 <?php
 if (isset($_POST['show']) && !empty($_POST['rollno'])) {
     $roll = $_POST['rollno'];
-    $query = "SELECT * FROM student1 WHERE rollno='$roll'";
+    $query = "SELECT * FROM stud WHERE rollno='$roll'";
     $queryresult = mysqli_query($con, $query);
 
     if ($row = mysqli_fetch_assoc($queryresult)) {
@@ -48,7 +48,7 @@ if (isset($_POST['update'])) {
     $roll = $_POST['rollno'];
     $newmark1 = $_POST['newmark1'];
 
-    $getmarks = mysqli_query($con, "SELECT mark2 FROM student1 WHERE rollno='$roll'");
+    $getmarks = mysqli_query($con, "SELECT mark2 FROM stud WHERE rollno='$roll'");
     if ($marks = mysqli_fetch_assoc($getmarks)) {
         $mark2 = $marks['mark2'];
         $total = $newmark1 + $mark2;
