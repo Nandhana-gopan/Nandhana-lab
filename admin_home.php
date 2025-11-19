@@ -45,22 +45,25 @@ if(!isset($_SESSION['admin'])){
 
     <!-- LEFT SIDE MENU -->
     <div class="left">
-        <h3>Menu</h3>
+        <h3>admin home</h3>
 
         <div class="section">
-            <a href="studentreg.php" target="contentFrame">Page 1</a>
+            <a href="studentreg.php" target="contentFrame">student registration</a>
         </div>
 
         <div class="section">
-            <a href="page2.php" target="contentFrame">Page 2</a>
+            <a href="markentry.php" target="contentFrame">mark entry</a>
         </div>
 
         <div class="section">
-            <a href="page3.php" target="contentFrame">Page 3</a>
+            <a href="markupdate.php" target="contentFrame">mark update</a>
         </div>
 
         <div class="section">
-            <a href="page4.php" target="contentFrame">Page 4</a>
+            <a href="student_view.php" target="contentFrame">update student</a>
+        </div>
+        <div class="section">
+            <a href="progresscard.php" target="contentFrame">progress card</a>
         </div>
 
     </div>

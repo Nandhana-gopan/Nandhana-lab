@@ -15,6 +15,6 @@
     password<input type="text" name="pass"><br><br>
     reenter-password:<input type="text" name="repass"><br><br>
     
-    <input type="submit">
+    <input type="submit" value="register">
     <input type="reset">
     </form>
