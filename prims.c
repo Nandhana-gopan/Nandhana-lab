@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <limits.h>
-
 #define MAX 10
 
 int main() {

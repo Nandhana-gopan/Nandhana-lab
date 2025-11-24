@@ -19,11 +19,18 @@ if ($con) {
     if (mysqli_num_rows($result) > 0) {
         echo '<script>alert("Roll number already exists"); document.location="studentreg.php";</script>';
     } else {
-        $s2 = "INSERT INTO studreg (rollno, name,phone,address,username,password)
+        // Insert into studreg table
+        $s2 = "INSERT INTO studreg (rollno, name, phone, address, username, password)
                VALUES ('$no', '$name', '$phone', '$address', '$user', '$pass')";
         $insert = mysqli_query($con, $s2);
 
         if ($insert) {
+
+            // 🔹 ALSO INSERT INTO studlogin table
+            $s3 = "INSERT INTO studlogin (rollno, username, password)
+                   VALUES ('$no', '$user', '$pass')";
+            mysqli_query($con, $s3);
+
             echo '<script>alert("Inserted successfully"); document.location="stud_db.php";</script>';
         } else {
             echo '<script>alert("Insert failed: ' . mysqli_error($con) . '");</script>';
@@ -32,3 +39,4 @@ if ($con) {
 } else {
     echo '<script>alert("Database connection failed");</script>';
 }
+?>
